@@ -127,11 +127,11 @@ let g:startify_lists = [
           \ ]
 
 let g:startify_bookmarks = [
-            \ { 'a': '~/.config/qtile/autostart.sh' },
             \ { 'b': '~/.bashrc' },
-            \ { 'c': '~/.config/qtile/config.py' },
             \ { 'i': '~/.config/nvim/init.vim' },
             \ { 'p': '~/.config/qutebrowser/config.py' },
+            \ { 's': '~/.config/sway/config' },
+            \ { 'w': '~/.config/waybar/config' },
             \ ]
 
 " Close NERDTRee before saving session
