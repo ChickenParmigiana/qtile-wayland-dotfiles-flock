@@ -1,6 +1,6 @@
 # Various dotfiles for my [Sway WM](https://www.sway.org/) setup.
 Sway is a tiling Wayland compositor and a drop-in replacement for the i3 window manager for X11. It works with your existing i3 configuration and supports most of i3's features, plus a few extras.<br /><br />
-**Please note that I use the latest  versions of Sway, Wayland and Wlroots from their GitHub repos using the AUR.**
+**Please note that I use the latest versions of Sway, Wayland and Wlroots from their GitHub repos using the [AUR](https://aur.archlinux.org/).**
 
 ![ScreenShot](screenshot.jpg)
 
