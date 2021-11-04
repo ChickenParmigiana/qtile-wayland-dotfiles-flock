@@ -16,7 +16,7 @@ Below is a list of some of the packages that I use for my current setup.
 - **Screen Locker** --- [Swaylock Effects](https://aur.archlinux.org/packages/swaylock-effects-git)
 - **Screenshots** --- [Grim](https://aur.archlinux.org/packages/grim-git)
                   --- [Slurp](https://aur.archlinux.org/packages/slurp-git)
-- **Idle management daemon** --- [Swayidle](https://aur.archlinux.org/packages/swayidle.git)
+- **Idle Management Daemon** --- [Swayidle](https://aur.archlinux.org/packages/swayidle.git)
 - **Shell** --- [Bash](https://wiki.archlinux.org/index.php/Bash) using [Starship](https://aur.archlinux.org/packages/starship-git/) 
 - **Terminal** --- [Kitty](https://wiki.archlinux.org/index.php/Kitty)
 - **Notification Daemon** --- [Mako](https://aur.archlinux.org/packages/mako-git)
