@@ -11,6 +11,7 @@ Below is a list of some of the packages that I use for my current setup.
 - **Operating System** --- [Archlinux](https://www.archlinux.org/)
 - **AUR Helper** --- [Paru](https://aur.archlinux.org/packages/paru-git/)
 - **Boot Loader** --- [Grub](https://wiki.archlinux.org/index.php/GRUB)
+- **Resource Monitor** --- [Btop](https://aur.archlinux.org/packages/btop-git)
 - **Window Manager** --- [Sway](https://aur.archlinux.org/packages/sway-git)
 - **Bar** --- [Waybar](https://aur.archlinux.org/packages/waybar-git)
 - **Screen Locker** --- [Swaylock Effects](https://aur.archlinux.org/packages/swaylock-effects-git)
