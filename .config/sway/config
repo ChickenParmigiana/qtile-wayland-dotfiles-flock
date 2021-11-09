@@ -3,7 +3,7 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-
+#xwayland disable
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -24,7 +24,7 @@ set $menu dmenu_path | rofi -show drun | xargs swaymsg exec --
 set $wallpaper ~/Pictures/Wallpapers/artur-sadlos-to-sh250-ooh-01-01-wip002i.jpg
 
 # Start Polkit
-exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authenication-agent-1"
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Check clamshell mode on reload 
 exec_always ~/.local/bin/clamshell-mode.sh
