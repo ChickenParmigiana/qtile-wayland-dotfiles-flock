@@ -5,13 +5,26 @@ if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
 fi
 
 if ! updates_aur=$(paru -Qum 2> /dev/null | wc -l); then
-    updates_aur=0
+    updates_arch=0
 fi
 
-updates=$((updates_arch + updates_aur))
+output="$(checkupdates;paru -Qum)"
+number="$((updates_arch + updates_aur))"
 
-if [ "$updates" -gt 0 ]; then
-    echo -e " $updates"
+if [ "$number" -gt 0 ]; then
+    text=" $number"
 else
-    echo ""
+    text=""
 fi
+
+if (( "$number" > 20 ))
+then
+    tooltip="$(echo "$output" | head -n 20 | sed -z 's/\n/\\n/g')"
+    tooltip+='...'
+else
+    tooltip="$(echo "$output" | sed -z 's/\n/\\n/g')"
+    tooltip=${tooltip::-2}
+fi
+
+echo "{\"text\":\""$text"\", \"tooltip\":\""$tooltip"\"}"
+exit 0

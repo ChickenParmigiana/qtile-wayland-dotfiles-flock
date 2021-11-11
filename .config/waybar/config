@@ -163,9 +163,12 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/arch-updates": {
-        "format": "{}",
+        "format-text": "{text}",
+        "tooltip": true,
+        "return-type": "json",
+        "tooltip-format": "{tooltip}",
         "interval": 600,
-        "exec": "~/.local/bin/statusbar/arch-updates.sh",
+        "exec": "~/.local/bin/statusbar/arch-updates.sh 2> /dev/null",
         "exec-if": "exit 0",
         "on-click": "kitty -e 'paru'; pkill -SIGRTMIN+8 waybar",
         "signal": 8
