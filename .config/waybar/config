@@ -163,10 +163,8 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/arch-updates": {
-        "format-text": "{text}",
-        "tooltip": true,
+        "format-text": "{}",
         "return-type": "json",
-        "tooltip-format": "{tooltip}",
         "interval": 600,
         "exec": "~/.local/bin/statusbar/arch-updates.sh 2> /dev/null",
         "exec-if": "exit 0",
@@ -174,6 +172,7 @@
         "signal": 8
 },
     "custom/date-time": {
+        "format-text": "{}",
         "interval": 1,
         "exec": "~/.local/bin/statusbar/date-time.sh",
         "on-click": "~/.local/bin/statusbar/calendar.sh show"
