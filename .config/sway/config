@@ -21,7 +21,8 @@ set $term kitty
 
 set $menu dmenu_path | rofi -show drun | xargs swaymsg exec --
 
-set $wallpaper ~/Pictures/Wallpapers/artur-sadlos-to-sh250-ooh-01-01-wip002i.jpg
+# Wallpaper is set by imv Shift+W
+set $wallpaper ~/.cache/wallpaper
 
 # Start Polkit
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

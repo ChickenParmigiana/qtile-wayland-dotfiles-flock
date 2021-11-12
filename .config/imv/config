@@ -59,3 +59,6 @@ r = reset
 # Slideshow control
 t = slideshow +1
 <Shift+T> = slideshow -1
+
+# Set image as wallpaper for Sway
+<Shift+W> = exec cp -f "$imv_current_file" ~/.cache/wallpaper && swaymsg output "*" background ~/.cache/wallpaper fill
