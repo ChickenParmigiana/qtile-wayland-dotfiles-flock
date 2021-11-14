@@ -24,6 +24,7 @@ Below is a list of some of the packages that I use for my current setup.
 - **Application Launcher** --- [Rofi Wayland](https://aur.archlinux.org/packages/rofi-lbonn-wayland-git)
 - **File Manager** --- [Ranger](https://aur.archlinux.org/packages/ranger-git)
 - **Image Viewer** --- [Imv](https://archlinux.org/packages/community/x86_64/imv)
+- **Document Scanner** -- [Simple-scan](https://archlinux.org/packages/community/x86_64/simple-scan)
 - **Editor** --- [Neovim](https://aur.archlinux.org/packages/neovim-git)
   - **Plugins**
 	- [gruvbox](https://github.com/morhetz/gruvbox)
