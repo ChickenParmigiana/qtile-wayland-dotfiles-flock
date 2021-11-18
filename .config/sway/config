@@ -36,6 +36,12 @@ exec_always ~/.local/bin/clamshell-mode.sh
 # At startup focus on workspace 1
 exec --no-startup-id swaymsg "workspace 1;"
 
+bindsym $mod+g exec env RUST_BACKTRACE=1 \
+    swayr switch-window >> /tmp/swayr.log 2>&1
+
+# Start swayr daemon 
+exec env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1
+
 # Hide mouse cursor after a period of inactivity.
 seat * hide_cursor 4000
 
