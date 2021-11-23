@@ -9,10 +9,10 @@
     "modules-center": ["custom/date-time"],
     "modules-right": ["custom/arch-updates", "idle_inhibitor", "pulseaudio", "backlight", "temperature", "network", "battery", "battery#bat2", "tray"],
     // Modules configuration
-    // "sway/workspaces": {
-    //       "current-only": false,
+    //   "sway/workspaces": {
+    //   "current-only": false,
     //     "disable-scroll": true,
-    //     "all-outputs": true,
+    //     "all-outputs": false,
     //     "format": "{name}: {icon}",
     //     "format-icons": {
     //         "1": "",
