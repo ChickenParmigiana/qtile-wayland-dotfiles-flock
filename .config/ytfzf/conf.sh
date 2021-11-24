@@ -10,6 +10,9 @@
 #  ENV VARIABLES  #
 ###################
 
+# Detach player from the terminal
+detach_player=1
+
 #each variable below can be set here, or using export
 #when setting them through export, use the variable in parentheses instead
 #variables set through export will override the ones set here
