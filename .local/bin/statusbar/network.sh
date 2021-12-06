@@ -28,11 +28,11 @@ WAN IP: $wan"
 
 function IconUpdate() {
 	if [ "$(nmcli connection show --active | grep -oh "\w*ethernet\w*")" == "ethernet" ]; then
-		icon=" "
+		icon=""
 	elif [ "$(nmcli connection show --active | grep -oh "\w*wifi\w*")" == "wifi" ]; then
-		icon=" "
+		icon=""
 	else
-		icon=" "
+		icon=""
 	fi
 }
 
