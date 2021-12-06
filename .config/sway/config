@@ -25,16 +25,16 @@ set $menu dmenu_path | rofi -show drun | xargs swaymsg exec --
 set $wallpaper ~/.cache/wallpaper
 
 # Start Polkit
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Check clamshell mode on reload 
 exec_always ~/.local/bin/clamshell-mode.sh
 
 # Start Dunst
-#exec_always --no-startup-id dunst
+#exec_always dunst
 
 # At startup focus on workspace 1
-exec --no-startup-id swaymsg "workspace 1;"
+exec swaymsg "workspace 1;"
 
 bindsym $mod+g exec env RUST_BACKTRACE=1 \
     swayr switch-window >> /tmp/swayr.log 2>&1
