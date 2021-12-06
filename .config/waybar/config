@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["custom/date-time"],
-    "modules-right": ["custom/arch-updates", "idle_inhibitor", "pulseaudio", "backlight", "temperature", "network", "battery", "battery#bat2", "tray"],
+    "modules-right": ["custom/arch-updates", "idle_inhibitor", "pulseaudio", "backlight", "temperature", "custom/network", "battery", "battery#bat2", "tray"],
     // Modules configuration
     //   "sway/workspaces": {
     //   "current-only": false,
@@ -176,5 +176,11 @@
         "interval": 1,
         "exec": "~/.local/bin/statusbar/date-time.sh",
         "on-click": "~/.local/bin/statusbar/calendar.sh show"
+},
+    "custom/network": {
+        "format-text": "{}",
+        "return-type": "json",
+        "restart-interval": 1,
+        "exec": "~/.local/bin/statusbar/network.sh 2> /dev/null"
 }
 }

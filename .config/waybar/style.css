@@ -74,6 +74,7 @@ window#waybar.chromium {
 #temperature,
 #backlight,
 #network,
+#custom-network,
 #pulseaudio,
 #custom-media,
 #tray,
