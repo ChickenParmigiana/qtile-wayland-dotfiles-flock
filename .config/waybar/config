@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["custom/date-time"],
-    "modules-right": ["custom/arch-updates", "idle_inhibitor", "pulseaudio", "backlight", "temperature", "custom/network", "battery", "battery#bat2", "tray"],
+    "modules-right": ["custom/arch-updates", "idle_inhibitor", "pulseaudio", "backlight", "temperature", "custom/network", "battery", "tray"],
     // Modules configuration
     //   "sway/workspaces": {
     //   "current-only": false,
