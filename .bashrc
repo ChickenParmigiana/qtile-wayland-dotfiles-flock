@@ -54,6 +54,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=Unity
 export GDK_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland
 
