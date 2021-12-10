@@ -21,7 +21,7 @@ Below is a list of some of the packages that I use for my current setup.
 - **Idle Management Daemon** --- [Swayidle](https://aur.archlinux.org/packages/swayidle.git)
 - **Shell** --- [Bash](https://wiki.archlinux.org/index.php/Bash) using [Starship](https://aur.archlinux.org/packages/starship-git/) 
 - **Terminal** --- [Kitty](https://wiki.archlinux.org/index.php/Kitty)
-- **Notification Daemon** --- [Dunst](https://archlinux.org/community/x86_64/dunst)
+- **Notification Daemon** --- [Dunst](https://archlinux.org/packages/ommunity/x86_64/dunst)
 - **Application Launcher** --- [Rofi Wayland](https://aur.archlinux.org/packages/rofi-lbonn-wayland-git)
 - **File Manager** --- [Ranger](https://aur.archlinux.org/packages/ranger-git)
 - **Image Viewer** --- [Imv](https://archlinux.org/packages/community/x86_64/imv)
