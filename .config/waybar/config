@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["custom/date-time"],
-    "modules-right": ["custom/arch-updates", "idle_inhibitor", "pulseaudio", "backlight", "temperature", "custom/network", "battery", "tray"],
+    "modules-right": ["custom/arch-updates", "custom/scratchpad-indicator", "idle_inhibitor", "pulseaudio", "backlight", "temperature", "custom/network", "battery", "tray"],
     // Modules configuration
     //   "sway/workspaces": {
     //   "current-only": false,
@@ -170,17 +170,26 @@
         "exec-if": "exit 0",
         "on-click": "kitty -e 'paru'; pkill -SIGRTMIN+8 waybar",
         "signal": 8
-},
+    },
     "custom/date-time": {
         "format-text": "{}",
         "interval": 1,
         "exec": "~/.local/bin/statusbar/date-time.sh",
         "on-click": "~/.local/bin/statusbar/calendar.sh show"
-},
+    },
     "custom/network": {
         "format-text": "{}",
         "return-type": "json",
         "restart-interval": 1,
         "exec": "~/.local/bin/statusbar/network.sh 2> /dev/null"
-}
+    },
+    "custom/scratchpad-indicator": {
+        "format-text": "{}",
+        "return-type": "json",
+        "interval": 3,
+        "exec": "~/.local/bin/statusbar/scratchpad-indicator.sh 2> /dev/null",
+        "exec-if": "exit 0",
+        "on-click": "swaymsg 'scratchpad show'",
+        "on-click-right": "swaymsg 'move scratchpad'"
+    }
 }
