@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Exec=kitty --class newsboat -e newsboat
+Name=Newsboat
+Comment=Newsboat is an RSS/Atom feed reader for the text console
+Icon=utilities-terminal
+Keywords=News;Browser;Terminal
+MimeType=inode/directory;
+Categories=ConsoleOnly;System
