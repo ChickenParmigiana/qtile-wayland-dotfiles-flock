@@ -14,5 +14,5 @@ tooltip="缾 Scratchpad\n\n"
 tooltip+="$(echo "$output" | sed -z 's/\n/\\n/g')"
 tooltip=${tooltip::-2}
 
-echo "{\"text\":\""$text"\", \"tooltip\":\""$tooltip"\"}"
+echo "{\"text\":\"$text\", \"tooltip\":\"$tooltip\"}"
 exit 0
