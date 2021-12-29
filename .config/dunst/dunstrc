@@ -52,7 +52,7 @@
     # Respectively the horizontal and vertical offset in pixels from the corner of the
     # screen specified by origin. Both values should always be positive or zero.
     # Examples: origin = top-right offset = 10x300 # a margin of 10 pixels from the right and 300 pixels from the top
-    offset = 10x15
+    offset = 15x55
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -69,7 +69,7 @@
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
     # to the font height and padding.
-    notification_height = 0
+    # notification_height = 0
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.

@@ -24,25 +24,22 @@ WAN IP: $wan"
 	else
 		connection="No active connection."
 	fi
+	dunstify -i "network-idle" "$connection" -r 123
 }
 
 function IconUpdate() {
 	if [ "$(nmcli connection show --active | grep -oh "\w*ethernet\w*")" == "ethernet" ]; then
-		icon=""
+		icon=" "
 	elif [ "$(nmcli connection show --active | grep -oh "\w*wifi\w*")" == "wifi" ]; then
-		icon=""
+		icon=" "
 	else
-		icon=""
+		icon=" "
 	fi
+	printf "%s" "$icon"
 }
 
-ShowInfo
-IconUpdate	
-
-text="$icon"
-
-tooltip="$(echo "$connection" | sed -z 's/\n/\\n/g')"
-tooltip=${tooltip::-2}
-
-echo "{\"text\":\""$text"\", \"tooltip\":\""$tooltip"\"}"
-exit 0
+if [ "$1" = "ShowInfo" ]; then
+	ShowInfo
+else
+	IconUpdate	
+fi

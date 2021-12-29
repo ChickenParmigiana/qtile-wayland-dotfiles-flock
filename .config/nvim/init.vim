@@ -130,8 +130,8 @@ let g:startify_bookmarks = [
             \ { 'b': '~/.bashrc' },
             \ { 'i': '~/.config/nvim/init.vim' },
             \ { 'p': '~/.config/qutebrowser/config.py' },
-            \ { 's': '~/.config/sway/config' },
-            \ { 'w': '~/.config/waybar/config' },
+            \ { 'c': '~/.config/qtile/config.py' },
+            \ { 'a': '~/.config/qtile/autostart.sh' },
             \ ]
 
 " Close NERDTRee before saving session

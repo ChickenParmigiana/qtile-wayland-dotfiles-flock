@@ -33,6 +33,7 @@ case $chosen in
         systemctl hibernate
         ;;
     $log_out)
-        swaymsg exit
+        #swaymsg exit
+        loginctl terminate-session "${XDG_SESSION_ID-}"
         ;;
 esac
