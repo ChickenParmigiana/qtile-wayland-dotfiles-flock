@@ -8,16 +8,16 @@ Please note that I use the latest Qtile from their GitHub repo using the AUR [Qt
 
 Below is a list of some of the packages that I use for my current setup.
 
+
 - **Operating System** --- [Archlinux](https://www.archlinux.org/)
 - **AUR Helper** --- [Paru](https://aur.archlinux.org/packages/paru-git/)
 - **Boot Loader** --- [Grub](https://wiki.archlinux.org/index.php/GRUB)
 - **Resource Monitor** --- [Btop](https://aur.archlinux.org/packages/btop-git)
-- **Window Manager** --- [Sway](https://aur.archlinux.org/packages/sway-git)
-- **Bar** --- [Waybar](https://aur.archlinux.org/packages/waybar-git)
+- **Window Manager** --- [Qtile](https://aur.archlinux.org/packages/qtile-git)
 - **Screen Locker** --- [Swaylock Effects](https://aur.archlinux.org/packages/swaylock-effects-git)
 - **Screenshots** --- [Grim](https://aur.archlinux.org/packages/grim-git)
                   --- [Slurp](https://aur.archlinux.org/packages/slurp-git)
-- **Window Switcher** --- [Swayr](https://aur.archlinux.org/packages/swayr-git)
+- **Window Switcher** --- [Custom made for Qtile]()
 - **Idle Management Daemon** --- [Swayidle](https://aur.archlinux.org/packages/swayidle.git)
 - **Shell** --- [Bash](https://wiki.archlinux.org/index.php/Bash) using [Starship](https://aur.archlinux.org/packages/starship-git/) 
 - **Terminal** --- [Kitty](https://wiki.archlinux.org/index.php/Kitty)
@@ -58,9 +58,9 @@ Below is a list of some of the packages that I use for my current setup.
 ### Window manager controls
 | Keys                                 | Action                    |
 | ------------------------------------ | ------------------------- |
-| <kbd>SHIFT + MOD + c</kbd>           | reload Sway config        |
-| <kbd>SHIFT + MOD + e</kbd>           | Exit Sway                 |
-| <kbd>SHIFT + ALT + q</kbd>           | kill window               |
+| <kbd>CTRL + MOD + r</kbd>            | restart Qtile             |
+| <kbd>CTRL + MOD + q</kbd>            | shutdown Qtile            |
+| <kbd>MOD + w</kbd>                   | kill window               |
 | <kbd>MOD + RETURN</kbd>              | spawn terminal            |
-| <kbd>MOD + d</kbd>                   | Rofi menu                 |
-| <kbd>SHIFT + MOD + p</kbd>           | Rofi power menu           |
+| <kbd>CTRL + Space</kbd>              | Rofi menu                 |
+| <kbd>CTRL + MOD + p</kbd>            | Rofi power menu           |
