@@ -56,16 +56,16 @@ export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=wayland
 export GDK_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland
+export XDG_CURRENT_DESKTOP='Wayland / Qtile'
+export XKB_DEFAULT_LAYOUT=gb
 
 # FZF default options
 export FZF_DEFAULT_OPTS="--color='bg:#000000,bg+:#000000,info:#00EE00,border:#6B6B6B,spinner:#98BC99' \
         --color='hl:#719872,fg:#D9D9D9,header:#719872,fg+:#D9D9D9' \
         --color='pointer:#0000ff,marker:#E17899,prompt:#98BEDE,hl+:#98BC99'"
 
-# startx if on matching VT
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-exec sway
-fi
+# Start wm if on matching VT
+[ "$(tty)" = "/dev/tty1" ] && exec qtile start -b wayland
 
 # If not in xterm don't start starship
 case $TERM in
