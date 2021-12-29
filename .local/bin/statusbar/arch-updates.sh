@@ -1,24 +1,17 @@
 #!/bin/bash
 
-updates="$(checkupdates;paru -Qum)"
-arch="$(checkupdates | wc -l)"
-aur="$(paru -Qum | wc -l)"
-number=$((arch+aur))
-
-if [ "$number" -gt 0 ]; then
-    text=" $number"
-else
-    text=""
+if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
+    updates_arch=0
 fi
 
-if (( "$number" > 20 ))
-then
-    tooltip="$(echo "$updates" | head -n 20 | sed -z 's/\n/\\n/g')"
-    tooltip+='...'
-else
-    tooltip="$(echo "$updates" | sed -z 's/\n/\\n/g')"
-    tooltip=${tooltip::-2}
+if ! updates_aur=$(paru -Qum 2> /dev/null | wc -l); then
+    updates_aur=0
 fi
 
-echo "{\"text\":\""$text"\", \"tooltip\":\""$tooltip"\"}"
-exit 0
+updates=$((updates_arch + updates_aur))
+
+if [ "$updates" -gt 0 ]; then
+    echo -e "%{F#55aa55}%{F-} $updates"
+else
+    echo ""
+fi
