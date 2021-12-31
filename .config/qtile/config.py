@@ -40,6 +40,7 @@ import time
 # from libqtile.utils import send_notification
 from libqtile.log_utils import logger
 
+
 # Get the number of connected screens
 
 
@@ -49,6 +50,7 @@ from libqtile.log_utils import logger
 # If you are running Wayland
 #    xr = subprocess.check_output('wlr-randr | grep -v "^[[:blank:]]"', shell=True).decode().split('\n')
 #    monitors = len(xr) - 1 if len(xr) > 2 else len(xr)
+#    logger.warning(f"Number of monitors: {monitors}")
 #    return monitors
 
 
@@ -465,12 +467,12 @@ for monitor in range(monitors):
                         widget.CheckUpdates(
                             **widget_defaults,
                             update_interval=600,
-                            distro='Arch_yay',
-                            custom_command='checkupdates;paru -Qum',
+                            distro='Arch_paru',
+                            custom_command='paru -Qum;checkupdates',
                             display_format=' {updates}',
                             colour_have_updates=GREEN,
-                            execute='kitty -e paru',
-                        ),
+                            execute='kitty -e paru'
+                         ),
 #                        widget.Mpris2(
 #                            name='spotify',
 #                            objname="org.mpris.MediaPlayer2.spotify",
@@ -479,6 +481,7 @@ for monitor in range(monitors):
 #                            stop_pause_text='',
 #                            **widget_defaults
 #                        ),
+                        widget.Spacer(length=5),
                         widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/statusbar/brightnesscontrol")).decode(), mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/brightnesscontrol down"), shell=True), 'Button3': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/brightnesscontrol up"), shell=True)}),
                         widget.Spacer(length=5),
                         widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/statusbar/volumecontrol")).decode(), mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/volumecontrol down"), shell=True), 'Button2': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/volumecontrol mute"), shell=True), 'Button3': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/volumecontrol up"), shell=True)}),
