@@ -44,14 +44,11 @@ from libqtile.log_utils import logger
 # Get the number of connected screens
 
 
-# def get_monitors():
-# If you are running X
-#     xr = subprocess.check_output('xrandr --query | grep " connected"', shell=True).decode().split('\n')
-# If you are running Wayland
-#    xr = subprocess.check_output('wlr-randr | grep -v "^[[:blank:]]"', shell=True).decode().split('\n')
-#    monitors = len(xr) - 1 if len(xr) > 2 else len(xr)
-#    logger.warning(f"Number of monitors: {monitors}")
-#    return monitors
+def get_monitors():
+    xr = qtile.screens
+    monitors = len(xr) - 1 if len(xr) > 2 else len(xr)
+    logger.warning(f"Number of monitors: {monitors}")
+    return monitors
 
 
 # monitors = get_monitors()
@@ -468,7 +465,7 @@ for monitor in range(monitors):
                             **widget_defaults,
                             update_interval=600,
                             distro='Arch_paru',
-                            custom_command='paru -Qum;checkupdates',
+                            custom_command='checkupdates;paru -Qum',
                             display_format=' {updates}',
                             colour_have_updates=GREEN,
                             execute='kitty -e paru'
