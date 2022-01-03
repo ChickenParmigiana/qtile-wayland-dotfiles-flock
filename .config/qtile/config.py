@@ -100,7 +100,7 @@ def slight_delay(window):
 
 @hook.subscribe.client_managed
 def repos(window):
-    if 'mpv' in window.get_wm_class():
+    if window.get_wm_class() and 'mpv' in window.get_wm_class():
         window.floating = True
         window.place(1200, 650, 640, 360, 2, "#ffffff" )
 
@@ -465,7 +465,7 @@ for monitor in range(monitors):
                             **widget_defaults,
                             update_interval=600,
                             distro='Arch_paru',
-                            custom_command='checkupdates;paru -Qua',
+                            custom_command='paru -Qua;checkupdates',
                             display_format=' {updates}',
                             colour_have_updates=GREEN,
                             execute='kitty -e paru'
