@@ -465,7 +465,7 @@ for monitor in range(monitors):
                             **widget_defaults,
                             update_interval=600,
                             distro='Arch_paru',
-                            custom_command='paru -Qua;checkupdates',
+                            custom_command='~/.local/bin/statusbar/arch-updates.sh',
                             display_format=' {updates}',
                             colour_have_updates=GREEN,
                             execute='kitty -e paru'
