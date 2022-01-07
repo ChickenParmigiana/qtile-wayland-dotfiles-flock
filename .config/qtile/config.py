@@ -77,17 +77,17 @@ def modify_window(client):
 # Hook to fallback to the first group with windows when last window of group is killed
 
 
-@hook.subscribe.client_killed
-def fallback(window):
+# @hook.subscribe.client_killed
+# def fallback(window):
     #     if window.group.windows != [window]:
-    if isinstance(window, base.Static) or window.group.windows != [window]:
-        return
-    idx = qtile.groups.index(window.group)
-    for group in qtile.groups[idx - 1::-1]:
-        if group.windows:
-            qtile.current_screen.toggle_group(group)
-            return
-    qtile.current_screen.toggle_group(qtile.groups[0])
+#    if isinstance(window, base.Static) or window.group.windows != [window]:
+#        return
+#    idx = qtile.groups.index(window.group)
+#    for group in qtile.groups[idx - 1::-1]:
+#        if group.windows:
+#            qtile.current_screen.toggle_group(group)
+#            return
+#    qtile.current_screen.toggle_group(qtile.groups[0])
 
 # Work around for matching Spotify
 
