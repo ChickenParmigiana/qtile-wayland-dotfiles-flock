@@ -54,16 +54,15 @@ def get_monitors():
 # monitors = get_monitors()
 monitors = 2
 
-# Run autorandr --change and restart Qtile on screen change
+# Restart Qtile on screen change
 
 
 # @hook.subscribe.screen_change
 # def set_screens(event):
-#    subprocess.run(["autorandr", "--change"])
-#    qtile.restart()
+#   subprocess.run(["autorandr", "--change"])
+#   qtile.cmd_reload_config()
 
 # When application launched automatically focus it's group
-# Works under X but gives errors about no attribute '_app_id' for Qutebrowser
 
 @hook.subscribe.client_new
 def modify_window(client):
@@ -79,14 +78,14 @@ def modify_window(client):
 
 # @hook.subscribe.client_killed
 # def fallback(window):
-#    if window.group.windows != [window]:
-#        return
-#    idx = qtile.groups.index(window.group)
-#    for group in qtile.groups[idx - 1::-1]:
-#        if group.windows:
-#            qtile.current_screen.toggle_group(group)
-#            return
-#    qtile.current_screen.toggle_group(qtile.groups[0])
+#     if window.group.windows != [window]:
+#         return
+#     idx = qtile.groups.index(window.group)
+#     for group in qtile.groups[idx - 1::-1]:
+#         if group.windows:
+#             qtile.current_screen.toggle_group(group)
+#             return
+#     qtile.current_screen.toggle_group(qtile.groups[0])
 
 # Work around for matching Spotify
 
