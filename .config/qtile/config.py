@@ -96,6 +96,14 @@ def modify_window(client):
 def slight_delay(window):
     time.sleep(0.04)
 
+# If Spotify opens move it to group 6
+
+
+@hook.subscribe.client_name_updated
+def spotify(window):
+    if window.name == 'Spotify':
+        window.cmd_togroup(group_name='阮 ₆')
+
 # If mpv opens float it at pos x, y, w, h, borderwidth, border color
 
 
