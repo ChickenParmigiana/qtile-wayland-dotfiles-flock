@@ -111,7 +111,7 @@ def spotify(window):
 def repos(window):
     if window.get_wm_class() and 'mpv' in window.get_wm_class():
         window.floating = True
-        window.place(1200, 650, 640, 360, 2, "#ffffff" )
+        window.place(1200, 650, 640, 360, 2, "#ffffff")
 
 @hook.subscribe.startup_once
 def autostart():
