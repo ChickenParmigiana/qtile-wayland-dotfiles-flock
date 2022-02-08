@@ -6,7 +6,7 @@ Please note that I use the latest Qtile from their GitHub repo using the AUR [Qt
 
 ## Details
 
-Below is a list of some of the packages that I use for my current setup.
+Below is a list of some of the packages that I use for my current setup which consists of two screens. A monitor as screen 0 and the laptop as screen 1.
 The idle management and screen locker currently do not function with Qtile running under Wayland but work to resolve this is currently under way.
 
 - **Operating System** --- [Archlinux](https://www.archlinux.org/)
@@ -14,6 +14,7 @@ The idle management and screen locker currently do not function with Qtile runni
 - **Boot Loader** --- [Grub](https://wiki.archlinux.org/index.php/GRUB)
 - **Resource Monitor** --- [Btop](https://aur.archlinux.org/packages/btop-git)
 - **Window Manager** --- [Qtile](https://aur.archlinux.org/packages/qtile-git)
+- **Screen Hotplug** --- [Kanshi](https://aur.archlinux.org/packages/kanshi-git)
 - **To run X apps** -- [cage](https://archlinux.org/packages/community/x86_64/cage)
 - **Screen Locker** --- [Swaylock Effects](https://aur.archlinux.org/packages/swaylock-effects-git)
 - **Screenshots** --- [Grim](https://aur.archlinux.org/packages/grim-git)
