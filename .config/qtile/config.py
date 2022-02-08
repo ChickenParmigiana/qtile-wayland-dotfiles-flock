@@ -44,12 +44,14 @@ from libqtile.backend import base
 
 # Get the number of connected screens
 
-
+# @hook.subscribe.screens_reconfigured
 def get_monitors():
     xr = qtile.screens
-    monitors = len(xr) - 1 if len(xr) > 2 else len(xr)
-    logger.warning(f"Number of monitors: {monitors}")
-    return monitors
+    result = len(xr) - 1 if len(xr) > 2 else len(xr)
+    if result <= 0:
+        result = 1
+    logger.warning(f"Number of monitors: {result}")
+    return result
 
 
 # monitors = get_monitors()
