@@ -15,7 +15,6 @@ The idle management and screen locker currently do not function with Qtile runni
 - **Resource Monitor** --- [Btop](https://aur.archlinux.org/packages/btop-git)
 - **Window Manager** --- [Qtile](https://aur.archlinux.org/packages/qtile-git)
 - **Screen Hotplug** --- [Kanshi](https://aur.archlinux.org/packages/kanshi-git)
-- **To run X apps** -- [cage](https://archlinux.org/packages/community/x86_64/cage)
 - **Screen Locker** --- [Swaylock Effects](https://aur.archlinux.org/packages/swaylock-effects-git)
 - **Screenshots** --- [Grim](https://aur.archlinux.org/packages/grim-git)
                   --- [Slurp](https://aur.archlinux.org/packages/slurp-git)
