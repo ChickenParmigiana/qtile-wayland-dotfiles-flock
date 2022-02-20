@@ -57,7 +57,7 @@ export XDG_SESSION_TYPE=wayland
 export GDK_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland
 export XDG_CURRENT_DESKTOP='Wayland / Qtile'
-export XKB_DEFAULT_LAYOUT=gb
+export XKB_DEFAULT_LAYOUT=us
 
 # FZF default options
 export FZF_DEFAULT_OPTS="--color='bg:#000000,bg+:#000000,info:#00EE00,border:#6B6B6B,spinner:#98BC99' \
