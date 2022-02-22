@@ -70,6 +70,7 @@ call plug#end()
 " Basic
 set encoding=utf-8                                  " Set encoding to utf-8
 set number                                          " Show line numbers on the sidebar
+nnoremap <F4> :set number!<CR>                      " Toggle line numbers
 set clipboard=unnamedplus                           " Copy paste between vim and everything else
 set nocompatible                                    " Use Vim defaults (much better!)
 set hlsearch                                        " Highlight search results
