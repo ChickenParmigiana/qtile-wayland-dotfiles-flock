@@ -481,14 +481,6 @@ for monitor in range(monitors):
                             colour_have_updates=GREEN,
                             execute='kitty -e paru'
                          ),
-#                        widget.Mpris2(
-#                            name='spotify',
-#                            objname="org.mpris.MediaPlayer2.spotify",
-#                            display_metadata=['xesam:title', 'xesam:artist'],
-#                            scroll_chars=None,
-#                            stop_pause_text='',
-#                            **widget_defaults
-#                        ),
                         widget.Spacer(length=5),
                         widget.GenPollText(update_interval=1, **widget_defaults, func=lambda: subprocess.check_output(os.path.expanduser("~/.local/bin/statusbar/brightnesscontrol")).decode(), mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/brightnesscontrol down"), shell=True), 'Button3': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/brightnesscontrol up"), shell=True)}),
                         widget.Spacer(length=5),
