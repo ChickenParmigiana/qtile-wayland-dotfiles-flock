@@ -123,7 +123,7 @@ def autostart():
 # Add th, nd or st to the date - use custom_date in text box
 
 
-def suffix(d):
+def sufix(d):
     return 'th' if 11 <= d <= 13 else {1: 'st', 2: 'nd', 3: 'rd'}.get(d % 10, 'th')
 
 
@@ -399,15 +399,89 @@ keys = [
 # Groups with matches
 
 workspaces = [
-    {"name": " ₁", "key": "1", "matches": [Match(wm_class='firefox')], "layout": "monadtall"},
-    {"name": " ₂", "key": "2", "matches": [Match(wm_class='kitty'), Match(wm_class='ranger')], "layout": "monadtall"},
-    {"name": " ₃", "key": "3", "matches": [Match(wm_class='nvim')], "layout": "monadtall"},
-    {"name": " ₄", "key": "4", "matches": [Match(wm_class='telegram-desktop'), Match(wm_class='weechat')], "layout": "monadtall"},
-    {"name": " ₅", "key": "5", "matches": [Match(wm_class='gimp-2.99')], "layout": "monadtall"},
-    {"name": "阮 ₆", "key": "6", "matches": [Match(wm_class='Spotify')], "layout": "monadtall"},
-    {"name": " ₇", "key": "7", "matches": [Match(wm_class='soffice')], "layout": "monadtall"},
-    {"name": " ₈", "key": "8", "matches": [Match(wm_class='newsboat')], "layout": "monadtall"},
-    {"name": " ₉", "key": "9", "matches": [Match(wm_class='neomutt')], "layout": "monadtall"},
+    {
+        "name": " ₁",
+        "key": "1",
+        "matches": [
+            Match(wm_class='firefox'),
+        ],
+        "layout": "monadtall",
+        "spawn": [],
+    },
+    {
+        "name": " ₂",
+        "key": "2",
+        "matches": [
+            Match(wm_class='kitty'),
+            Match(wm_class='ranger'),
+        ],
+        "layout": "monadtall",
+        "spawn": [],
+    },
+    {
+        "name": " ₃",
+        "key": "3",
+        "matches": [
+            Match(wm_class='nvim'),
+        ],
+        "layout": "monadtall",
+        "spawn": [],
+    },
+    {
+        "name": " ₄",
+        "key": "4",
+        "matches": [
+            Match(wm_class='telegram-desktop'),
+            Match(wm_class='weechat'),
+        ],
+        "layout": "monadtall",
+        "spawn": [],
+    },
+    {
+        "name": " ₅",
+        "key": "5",
+        "matches": [
+            Match(wm_class='gimp-2.99'),
+        ],
+        "layout": "monadtall",
+        "spawn": [],
+    },
+    {
+        "name": "阮 ₆",
+        "key": "6",
+        "matches": [
+            Match(wm_class='Spotify'),
+        ],
+        "layout": "monadtall",
+        "spawn": [],
+    },
+    {
+        "name": " ₇",
+        "key": "7",
+        "matches": [
+            Match(wm_class='soffice'),
+        ],
+        "layout": "monadtall",
+        "spawn": [],
+    },
+    {
+        "name": " ₈",
+        "key": "8",
+        "matches": [
+            Match(wm_class='newsboat'),
+        ],
+        "layout": "monadtall",
+        "spawn": [],
+    },
+    {
+        "name": " ₉",
+        "key": "9",
+        "matches": [
+            Match(wm_class='neomutt'),
+        ],
+        "layout": "monadtall",
+        "spawn": [],
+    },
 ]
 
 groups = []
@@ -516,11 +590,23 @@ else:
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front())
+    Drag(
+        [mod],
+        "Button1",
+        lazy.window.set_position_floating(),
+        start=lazy.window.get_position()
+    ),
+    Drag(
+        [mod],
+        "Button3",
+        lazy.window.set_size_floating(),
+        start=lazy.window.get_size()
+    ),
+    Click(
+        [mod],
+        "Button2",
+        lazy.window.bring_to_front()
+    )
 ]
 
 dgroups_key_binder = None
@@ -528,33 +614,35 @@ dgroups_app_rules = []  # type: List
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-floating_layout = layout.Floating(float_rules=[
-    # Run the utility of `xprop` to see the wm class and name of an X client.
-    # *layout.Floating.default_float_rules,
-    Match(title='Quit and close tabs?'),
-    Match(wm_type='utility'),
-    Match(wm_type='notification'),
-    Match(wm_type='toolbar'),
-    Match(wm_type='splash'),
-    Match(wm_type='dialog'),
-    Match(wm_class='gimp-2.99'),
-    Match(wm_class='Firefox'),
-    Match(wm_class='file_progress'),
-    Match(wm_class='confirm'),
-    Match(wm_class='dialog'),
-    Match(wm_class='download'),
-    Match(wm_class='error'),
-    Match(wm_class='notification'),
-    Match(wm_class='splash'),
-    Match(wm_class='toolbar'),
-    Match(title='About LibreOffice'),
-    Match(wm_class='confirmreset'),  # gitk
-    Match(wm_class='makebranch'),  # gitk
-    Match(wm_class='maketag'),  # gitk
-    Match(wm_class='ssh-askpass'),  # ssh-askpass
-    Match(title='branchdialog'),  # gitk
-    Match(title='pinentry'),  # GPG key password entry
-])
+floating_layout = layout.Floating(
+    float_rules=[
+        # Run qtile cmd-obj -o cmd -f windows to see the wm_class
+        # *layout.Floating.default_float_rules,
+        Match(title='Quit and close tabs?'),
+        Match(wm_type='utility'),
+        Match(wm_type='notification'),
+        Match(wm_type='toolbar'),
+        Match(wm_type='splash'),
+        Match(wm_type='dialog'),
+        Match(wm_class='gimp-2.99'),
+        Match(wm_class='Firefox'),
+        Match(wm_class='file_progress'),
+        Match(wm_class='confirm'),
+        Match(wm_class='dialog'),
+        Match(wm_class='download'),
+        Match(wm_class='error'),
+        Match(wm_class='notification'),
+        Match(wm_class='splash'),
+        Match(wm_class='toolbar'),
+        Match(title='About LibreOffice'),
+        Match(wm_class='confirmreset'),  # gitk
+        Match(wm_class='makebranch'),  # gitk
+        Match(wm_class='maketag'),  # gitk
+        Match(wm_class='ssh-askpass'),  # ssh-askpass
+        Match(title='branchdialog'),  # gitk
+        Match(title='pinentry'),  # GPG key password entry
+    ],
+)
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
