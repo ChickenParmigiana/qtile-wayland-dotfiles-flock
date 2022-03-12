@@ -37,15 +37,8 @@ def get_monitors():
 # monitors = get_monitors()
 monitors = 2
 
-# Restart Qtile on screen change
-
-
-# @hook.subscribe.screen_change
-# def set_screens(event):
-#   subprocess.run(["autorandr", "--change"])
-#   qtile.cmd_reload_config()
-
 # When application launched automatically focus it's group
+
 
 @hook.subscribe.client_new
 def modify_window(client):
@@ -56,7 +49,7 @@ def modify_window(client):
             targetgroup.cmd_toscreen(toggle=False)
             break
 
-# Hook to fallback to the first group with windows when last window of group is killed
+# Fallback to the first group with windows when last window of group is killed
 
 
 # @hook.subscribe.client_killed
