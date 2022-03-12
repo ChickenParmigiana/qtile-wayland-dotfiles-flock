@@ -551,17 +551,8 @@ for monitor in range(monitors):
                         ),
                         widget.CurrentLayoutIcon(scale=0.7),
                         widget.CurrentLayout(**widget_defaults),
-                        # widget.Prompt(**widget_defaults),
                         widget.Spacer(length=320),
-                        widget.GenPollText(
-                            func=custom_date,
-                            update_interval=1,
-                            **widget_defaults,
-                            mouse_callbacks={
-                                'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/calendar.sh show"), shell=True),
-                                'Button3': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/calendar.sh edit"), shell=True)
-                            }
-                        ),
+                        widget.GenPollText(func=custom_date, update_interval=1, **widget_defaults, mouse_callbacks={'Button1': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/calendar.sh show"), shell=True), 'Button3': lambda: qtile.cmd_spawn(os.path.expanduser("~/.local/bin/statusbar/calendar.sh edit"), shell=True)}),
                         widget.Spacer(),
                         widget.CheckUpdates(
                             **widget_defaults,
