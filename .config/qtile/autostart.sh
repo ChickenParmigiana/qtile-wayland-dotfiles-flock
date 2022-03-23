@@ -30,9 +30,3 @@ if cmd_exist dunst ; then
     __start dunst
 fi
 
-# Unclutter
-
-#if cmd_exist unclutter ; then
-#    __kill unclutter
-#    __start unclutter
-#fi
