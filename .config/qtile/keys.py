@@ -245,4 +245,20 @@ keys = [
         lazy.spawn(home + "/.local/bin/screenshot.sh save-to-clipboard"),
         desc='Capture a region of the screen to the clipboard'
         ),
+    Key(["control", "mod1"], "F1",
+        lazy.core.change_vt(1),
+        desc='Go to virtual console 1'
+        ),
+    Key(["control", "mod1"], "F2",
+        lazy.core.change_vt(2),
+        desc='Go to virtual console 2'
+        ),
+    Key(["control", "mod1"], "F3",
+        lazy.core.change_vt(3),
+        desc='Go to virtual console 3'
+        ),
+    Key(["control", "mod1"], "F4",
+        lazy.core.change_vt(4),
+        desc='Go to virtual console 4'
+        ),
 ]
