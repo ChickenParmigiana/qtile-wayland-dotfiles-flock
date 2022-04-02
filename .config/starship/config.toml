@@ -86,8 +86,6 @@ symbol = " "
 always_show_remote = false
 format = "[on $symbol$branch]($style) "
 style = "purple bold"
-truncation_length = "2^63 - 1"
-truncation_symbol = "…"
 only_attached = false
 disabled = false
 
