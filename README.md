@@ -18,7 +18,7 @@ The idle management and screen locker currently do not function with Qtile runni
 - **Screen Locker** --- [Swaylock Effects](https://aur.archlinux.org/packages/swaylock-effects-git)
 - **Screenshots** --- [Grim](https://aur.archlinux.org/packages/grim-git)
                   --- [Slurp](https://aur.archlinux.org/packages/slurp-git)
-- **Window Switcher** --- Custom made for Qtile ( Not yet commited to git )
+- **Window Switcher** --- [Custom made for Qtile (Wayland only)](https://github.com/justinesmithies/qtile-wayland-dotfiles/blob/master/.local/bin/qtile-window-switcher.py)
 - **Idle Management Daemon** --- [Swayidle](https://aur.archlinux.org/packages/swayidle.git)
 - **Shell** --- [Bash](https://wiki.archlinux.org/index.php/Bash) using [Starship](https://aur.archlinux.org/packages/starship-git/) 
 - **Terminal** --- [Kitty](https://wiki.archlinux.org/index.php/Kitty)
