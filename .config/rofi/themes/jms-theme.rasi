@@ -25,7 +25,7 @@ mainbox {
   spacing: 0px;
   padding: 0px 0;
   border: 1px;
-  border-color: @base0D;
+  border-color: #FFFFFF;
 }
 
 button {
