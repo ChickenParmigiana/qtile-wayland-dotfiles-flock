@@ -62,6 +62,9 @@ Plug 'simeji/winresizer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Xonsh syntax highlighting
+Plug 'abhishekmukherg/xonsh-vim'
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -128,6 +131,7 @@ let g:startify_lists = [
           \ ]
 
 let g:startify_bookmarks = [
+            \ { 'x': '~/.xonshrc' },
             \ { 'b': '~/.bashrc' },
             \ { 'i': '~/.config/nvim/init.vim' },
             \ { 'p': '~/.config/qutebrowser/config.py' },
