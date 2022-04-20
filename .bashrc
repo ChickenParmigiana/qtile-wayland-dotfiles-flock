@@ -10,9 +10,6 @@
 
 source <(kitty + complete setup bash)
 
-# Use fzf completion too
-source /usr/share/bash-completion/completions/fzf
-
 # If there are multiple matches for completion, Tab should cycle through them
 bind 'TAB':menu-complete
 
@@ -59,11 +56,6 @@ export QT_QPA_PLATFORM=wayland
 export XDG_CURRENT_DESKTOP='Wayland / Qtile'
 export XKB_DEFAULT_LAYOUT=us
 
-# FZF default options
-export FZF_DEFAULT_OPTS="--color='bg:#000000,bg+:#000000,info:#00EE00,border:#6B6B6B,spinner:#98BC99' \
-        --color='hl:#719872,fg:#D9D9D9,header:#719872,fg+:#D9D9D9' \
-        --color='pointer:#0000ff,marker:#E17899,prompt:#98BEDE,hl+:#98BC99'"
-
 # Start wm if on matching VT
 [ "$(tty)" = "/dev/tty1" ] && exec qtile start -b wayland
 
@@ -73,7 +65,6 @@ case $TERM in
     eval "$(starship init bash)";;
   *)
 esac
-
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
