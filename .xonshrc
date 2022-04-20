@@ -5,6 +5,7 @@
 import shutil
 
 # Aliases
+aliases['ls'] = ['ls', '--color=auto', '-hv', '--group-directories-first']
 aliases['cat'] = ['bat', '--paging=never']
 aliases['vim'] = ['nvim']
 aliases['config'] = ['/usr/bin/git', '--git-dir=$HOME/.cfg/', '--work-tree=$HOME']
@@ -12,6 +13,9 @@ aliases['wanip'] = ['dig', '+short', 'myip.opendns.com', '@resolver1.opendns.com
 
 if shutil.which('btop'):
 	aliases['top'] = ['btop']
+
+if ($TERM.__contains__('xterm')):
+    aliases['ssh'] = ['kitty', '+kitten', 'ssh']
 
 # Enviroment variables
 $LANG = "en_US.UTF-8"
