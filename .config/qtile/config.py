@@ -14,6 +14,18 @@ from widgets import widget_defaults, extension_defaults
 from screens import screens
 from mouse import mouse
 
+# Configure input devices
+try:
+    from libqtile.backend.wayland import InputConfig
+
+    wl_input_rules = {
+        "type:keyboard": InputConfig(
+            kb_layout='us',
+        ),
+    }
+except ImportError:
+    wl_input_rules = None
+
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
 follow_mouse_focus = True
