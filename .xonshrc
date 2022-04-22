@@ -36,7 +36,7 @@ $XDG_SESSION_TYPE = 'wayland'
 $GDK_BACKEND = 'wayland'
 $QT_QPA_PLATFORM = 'wayland'
 $XDG_CURRENT_DESKTOP = 'Wayland / Qtile'
-$XKB_DEFAULT_LAYOUT = 'us'
+#$XKB_DEFAULT_LAYOUT = 'us'
 
 # Start wm if on matching VT
 if $(tty).strip() == "/dev/tty1":
