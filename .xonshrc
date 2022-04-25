@@ -19,10 +19,7 @@ if ($TERM.__contains__('xterm')):
 
 # Enviroment variables
 $LANG = "en_US.UTF-8"
-$LANGUAGE = "en_US.UTF-8"
 $LC_ALL = "en_US.UTF-8"
-$LC_CTYPE = "en_US.UTF-8"
-
 $PROMPT = '{BOLD_BLUE}╭─{env_name}{BOLD_GREEN}{user}@{hostname}{BOLD_BLUE} {cwd}{branch_color}{curr_branch: {}}{RESET} {BOLD_BLUE}{prompt_end}\n╰>{RESET}'
 $EDITOR = 'nvim'
 $VISUAL = 'nvim'
