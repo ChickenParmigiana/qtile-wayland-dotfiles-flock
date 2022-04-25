@@ -50,3 +50,6 @@ if ($TERM.__contains__('xterm')):
 else:
     $PROMPT = '{env_name}{BOLD_GREEN}{user}@{hostname}{BOLD_BLUE} {cwd}{branch_color}{curr_branch: {}}{RESET} {BOLD_BLUE}{prompt_end}{RESET} '
 
+# Start carapace
+$COMPLETIONS_CONFIRM = True
+exec($(carapace _carapace))
