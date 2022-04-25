@@ -49,4 +49,4 @@ else:
 
 # Start carapace
 $COMPLETIONS_CONFIRM = True
-exec($(carapace _carapace))
+exec($(carapace _carapace xonsh))
