@@ -20,6 +20,11 @@ bind "set colored-stats on"
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
+# Append to the history file immediately with history -a
+# Clear the current history in the shell session with history -c
+# Reload the updated history back into the shell session with -r command
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
 # If bpytop is installed then alias top to bpytop 
 [ -e /usr/local/bin/btop ] && alias top="/usr/local/bin/btop"
 alias ls='ls --color=auto -hv --group-directories-first'
