@@ -43,6 +43,9 @@ esac
 command -v bat > /dev/null && alias cat='bat --paging=never' 
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 
+# Use bat as manpager
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -69,7 +72,7 @@ case $TERM in
 esac
 
 # Start carapace
-source <(carapace _carapace)
+# source <(carapace _carapace bash)
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
