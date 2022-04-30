@@ -13,15 +13,12 @@ source <(kitty + complete setup bash)
 # If there are multiple matches for completion, Tab should cycle through them
 bind 'TAB':menu-complete
 
-# Display a list of the matching files
-bind "set show-all-if-ambiguous on"
-
-# Perform partial completion on the first Tab press,
-# only start cycling full results on the second Tab press
-bind "set menu-complete-display-prefix on"
-
 # Colour autocomplete suggestions
 bind "set colored-stats on"
+
+# Use up and down arrows to search command history
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
 
 # If bpytop is installed then alias top to bpytop 
 [ -e /usr/local/bin/btop ] && alias top="/usr/local/bin/btop"
