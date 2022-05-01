@@ -76,18 +76,16 @@ export XDG_CURRENT_DESKTOP='Wayland / Qtile'
 export XKB_DEFAULT_LAYOUT=us
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+
 # Start wm if on matching VT
 [ "$(tty)" = "/dev/tty1" ] && exec qtile start -b wayland
 
 # If not in xterm don't start starship
-case $TERM in
-  xterm*|konsole*)
-eval "$(starship init bash)";;
-  *)
-esac
-
-# Start carapace
-# source <(carapace _carapace bash)
+#case $TERM in
+#  xterm*|konsole*)
+#eval "$(starship init bash)";;
+#  *)
+#esac
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
