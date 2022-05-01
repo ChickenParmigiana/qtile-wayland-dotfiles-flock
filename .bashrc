@@ -80,11 +80,11 @@ export LC_ALL="en_US.UTF-8"
 [ "$(tty)" = "/dev/tty1" ] && exec qtile start -b wayland
 
 # If not in xterm don't start starship
-#case $TERM in
-#  xterm*|konsole*)
-#eval "$(starship init bash)";;
-#  *)
-#esac
+case $TERM in
+  xterm*|konsole*)
+eval "$(starship init bash)";;
+  *)
+esac
 
 # Start carapace
 # source <(carapace _carapace bash)
