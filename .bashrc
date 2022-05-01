@@ -59,7 +59,8 @@ alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 # Use bat as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
+# Default PS1 prompt if not using Starship
+export PS1="\[$(tput bold)\]\[$(tput setaf 4)\]╭─\[$(tput setaf 2)\u@\h \[$(tput setaf 4)\]\w\[$(tput setaf 4)\]\n╰>\[$(tput sgr0)\]"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export PATH=$PATH:~/.local/bin
@@ -79,11 +80,11 @@ export LC_ALL="en_US.UTF-8"
 [ "$(tty)" = "/dev/tty1" ] && exec qtile start -b wayland
 
 # If not in xterm don't start starship
-case $TERM in
-  xterm*|konsole*)
-    eval "$(starship init bash)";;
-  *)
-esac
+#case $TERM in
+#  xterm*|konsole*)
+#eval "$(starship init bash)";;
+#  *)
+#esac
 
 # Start carapace
 # source <(carapace _carapace bash)
