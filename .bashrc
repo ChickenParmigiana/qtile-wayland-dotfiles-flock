@@ -1,5 +1,6 @@
-#
+#!/bin/bash
 # ~/.bashrc
+# shellcheck disable=SC2034,SC1090,SC1094
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -22,6 +23,15 @@ bind "set colored-stats on"
 # Use up and down arrows to search command history
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
+
+# ===============
+# HISTORY CONTROL
+# ===============
+
+shopt -s histappend
+
+# Don't save duplicates
+HISTCONTROL=ignoreboth:erasedups
 
 # Append to the history file immediately with history -a
 # Clear the current history in the shell session with history -c
@@ -63,7 +73,8 @@ export GDK_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland
 export XDG_CURRENT_DESKTOP='Wayland / Qtile'
 export XKB_DEFAULT_LAYOUT=us
-
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 # Start wm if on matching VT
 [ "$(tty)" = "/dev/tty1" ] && exec qtile start -b wayland
 
