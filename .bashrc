@@ -160,7 +160,7 @@ __git_prompt() {
 
     [[ -n $status_info ]] && result+="[$status_info]"
 
-    echo "$(tput setaf 3)$result"
+    echo "$(tput setaf 3)$result "
 }
 
 # If not in xterm don't start starship
