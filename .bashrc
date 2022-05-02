@@ -170,6 +170,3 @@ case $TERM in
     *)
         export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w] \$(__git_prompt)\[$(tput sgr0)\]";;
 esac
-
-
-#export PS1="\[$(tput bold)\]\[$(tput setaf 4)\]╭─\[$(tput setaf 2)\u@\h \[$(tput setaf 4)\]\w \$(__git_prompt)\[$(tput setaf 4)\]\n╰>\[$(tput sgr0)\]"
