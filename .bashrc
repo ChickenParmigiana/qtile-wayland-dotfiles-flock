@@ -5,9 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Use ble.sh 
-[[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
-
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
@@ -60,7 +57,7 @@ alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Default PS1 prompt if not using Starship
-export PS1="\[$(tput bold)\]\[$(tput setaf 4)\]╭─\[$(tput setaf 2)\u@\h \[$(tput setaf 4)\]\w\[$(tput setaf 4)\]\n╰>\[$(tput sgr0)\]"
+# export PS1="\[$(tput bold)\]\[$(tput setaf 4)\]╭─\[$(tput setaf 2)\u@\h \[$(tput setaf 4)\]\w \$(__git_prompt)\[$(tput setaf 4)\]\n╰>\[$(tput sgr0)\]"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export PATH=$PATH:~/.local/bin
@@ -91,5 +88,88 @@ export LC_ALL="en_US.UTF-8"
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
 
-# For ble.sh
-[[ ${BLE_VERSION-} ]] && ble-attach
+__git_check_untracked_changes() {
+    local -i count
+    count="$(git status --porcelain | sed -n '/??/p' | wc -l)"
+    echo "$count"
+}
+
+__git_check_staged_changes() {
+    local -i count
+    count="$(git status --porcelain | sed -n '/A/p' | wc -l)"
+    echo "$count"
+}
+
+__git_prompt() {
+    [[ ! -d .git ]] && {
+        # echo "[🔥no .git folder]"
+        exit
+    }
+
+    local result="git "
+
+    local branch
+    branch="$(git branch --show-current)"
+    local -i remote_branch_exists="$TRUE"
+
+    result+="("
+
+    if [[ -z $branch ]]; then
+        result+="❌ not on branch"
+    else
+        [[ "$(git branch -r --contains "origin/$branch" 2> /dev/null)" == "" ]] && {
+            result+="⚠️ "
+            remote_branch_exists="$FALSE"
+        }
+        result+="$branch"
+    fi
+
+    (( remote_branch_exists == TRUE )) && {
+        readarray -d $'\t' -t commit_difference < <(echo -e "$(git rev-list --left-right --count "origin/$branch...$branch")\t")
+
+        local -i commits_behind="${commit_difference[0]}"
+        local -i commits_ahead="${commit_difference[1]}"
+
+        local commit_difference_info=
+
+        (( commits_behind != 0 )) && commit_difference_info+="⬇️ $commits_behind"
+        (( commits_ahead != 0 )) && {
+            [[ -n $commit_difference_info ]] && commit_difference_info+=" "
+            commit_difference_info+="⬆️ $commits_ahead"
+        }
+
+        [[ -n $commit_difference_info ]] && result+=" $commit_difference_info"
+    }
+
+    result+=")"
+
+    local -i untracked_count
+    local -i staged_count
+    untracked_count="$(__git_check_untracked_changes)"
+    staged_count="$(__git_check_staged_changes)"
+
+    local status_info=
+    
+    (( untracked_count > 0 )) && {
+        status_info+="❌untracked:$untracked_count"
+    }
+    (( staged_count > 0 )) && {
+        [[ -n $status_info ]] && status_info+=" "
+        status_info+="✅staged:$staged_count"
+    }
+
+    [[ -n $status_info ]] && result+="[$status_info]"
+
+    echo "$(tput setaf 3)$result"
+}
+
+# If not in xterm don't start starship
+case $TERM in
+    xterm*|konsole*)
+        export PS1="\[$(tput bold)\]\[$(tput setaf 4)\]╭─\[$(tput setaf 2)\u@\h \[$(tput setaf 4)\]\w \$(__git_prompt)\[$(tput setaf 4)\]\n╰>\[$(tput sgr0)\]";;
+    *)
+        export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w] \$(__git_prompt)\[$(tput sgr0)\]";;
+esac
+
+
+#export PS1="\[$(tput bold)\]\[$(tput setaf 4)\]╭─\[$(tput setaf 2)\u@\h \[$(tput setaf 4)\]\w \$(__git_prompt)\[$(tput setaf 4)\]\n╰>\[$(tput sgr0)\]"
