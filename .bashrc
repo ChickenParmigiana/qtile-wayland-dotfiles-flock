@@ -82,7 +82,7 @@ case $TERM in
   xterm*|konsole*)
       eval "$(starship init bash)";;
   *)
-      export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w] \$(__git_prompt)\[$(tput sgr0)\]";;
+      export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\u@\h \w] \\[$(tput sgr0)\]";;
 esac
 
 # BEGIN_KITTY_SHELL_INTEGRATION
